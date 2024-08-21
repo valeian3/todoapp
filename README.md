@@ -1,50 +1,44 @@
-# React + TypeScript + Vite
+# React Vite Todo application EXAMPLE project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<center>
 
-Currently, two official plugins are available:
+![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TS](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+</center>
 
-## Expanding the ESLint configuration
+## A fully functional EXAMPLE project written with React, Vite, TypeScript and Tailwind
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+This project showcases a modern to-do app built with **React**, **Vite**, **TypeScript**, and **Tailwind CSS**. It highlights how to create a scalable and efficient application using these cutting-edge technologies. Ideal for learning and reference, this example demonstrates best practices in web development with a focus on performance and design.
 
-- Configure the top-level `parserOptions` property like this:
+- create your daily todo tasks
+- edit tasks
+- checkmark when completed
+- or simply delete when done
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
-```
+## Visuals of the app
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+![Screenshot of a desktop design of todo application.](/src//assets//desktop-todoapp-empty.png "Empty list example")
+![Screenshot of a desktop design of todo application.](/src//assets//desktop-todoapp-full.png "With todos example")
 
-```js
-// eslint.config.js
-import react from "eslint-plugin-react";
+## How to install / setup project
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: "18.3" } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs["jsx-runtime"].rules,
-  },
-});
-```
+1. clone this project
+2. make sure to have **node** and **npm** installed
+3. navigate to project root and install dependencies via **npm install**
+4. run project locally by **npm run dev**
+5. open browser on provided port
+
+## For developers
+
+Coming soon...
+
+## Find a bug?
+
+Instruction on how to follow up with pull request coming soon...
+
+## Known issues (Work in progress)
+
+This project is still ongoing. Project is meant for training and finding best practices for constructing new project.

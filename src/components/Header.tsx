@@ -1,13 +1,12 @@
-import { useTodoContext } from "../lib/hooks";
+import ThemeButton from "./ThemeButton";
 
 export default function Header() {
-  const { todos, countCompletedTodos } = useTodoContext();
   return (
-    <div className="flex justify-between items-center px-6 py-6 border-b-2 border-y-primary dark:border-y-slate-700 dark:text-white text-gray-900">
-      <h2>TODO APP</h2>
-      <p>
-        <strong>{countCompletedTodos}</strong> / {todos.length} todos completed
-      </p>
+    <div className="py-4 px-8 flex flex-row justify-between items-center border-b-2 border-slate-400 dark:border-slate-800 tablet:w-full">
+      <h2 className="text-xl font-bold text-slate-500 dark:text-slate-200">
+        Your Tasks
+      </h2>
+      <ThemeButton />
     </div>
   );
 }

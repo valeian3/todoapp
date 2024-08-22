@@ -1,7 +1,6 @@
+import AddTodoForm from "./components/AddTodoForm";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Sidebar from "./components/Sidebar";
-import ThemeButton from "./components/ThemeButton";
 import TodoList from "./components/TodoList";
 
 import { useTodoContext } from "./lib/hooks";
@@ -10,20 +9,17 @@ function App() {
   const { todos } = useTodoContext();
 
   return (
-    <div className="flex justify-center items-center flex-col min-h-screen bg-slate-100 dark:bg-gray-900">
-      <div className="flex justify-end w-3/4 mb-4">
-        <ThemeButton />
-      </div>
-      <main className="flex flex-col overflow-hidden bg-slate-50 dark:bg-gray-800 w-3/4 h-96 rounded-md">
-        <Header />
-        <div className="flex flex-col md:flex-row grow overflow-auto">
-          <Sidebar />
-          <div className="grow p-6">
+    <div className="min-h-screen flex flex-col bg-slate-100 dark:bg-slate-700 tablet:items-center">
+      <Header />
+      <div className="flex flex-col flex-grow px-8 py-4 overflow-hidden tablet:w-3/5 laptop:w-2/5 desktop:w-96">
+        <AddTodoForm />
+        <main className="flex-grow overflow-hidden relative">
+          <div className="absolute inset-0 overflow-y-auto">
             <TodoList todos={todos} />
           </div>
-        </div>
-      </main>
-      <Footer />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }

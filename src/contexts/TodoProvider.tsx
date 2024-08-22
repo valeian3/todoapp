@@ -55,7 +55,7 @@ const TodoProvider = ({ children }: PropsWithChildren) => {
   };
 
   const countCompletedTodos = useMemo(
-    () => todos.filter((todo) => todo.completed).length,
+    () => todos.filter((todo) => !todo.completed).length,
     [todos]
   );
 

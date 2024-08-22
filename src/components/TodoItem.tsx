@@ -11,20 +11,22 @@ const TodoItem: FC<TodoItemProps> = ({ todo }) => {
   const { deleteTodo, toggleTodoCompletion } = useTodoContext();
 
   return (
-    <div className="flex justify-between mb-2">
+    <div className="flex justify-between mb-4 rounded-2xl py-2 px-4 z-10 shadow-lg bg-slate-50 dark:bg-slate-600">
       <div className="flex justify-center items-center">
         <input
           id={todo.id.toString()}
           type="checkbox"
           checked={todo.completed}
           onChange={() => toggleTodoCompletion(todo.id)}
-          className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+          className="w-4 h-4 cursor-pointer text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-transparent dark:focus:ring-transparent dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
         />
         <label
           htmlFor={todo.id.toString()}
           className={`ml-4 ${
-            todo.completed ? "line-through" : "no-underline"
-          } "ms-2 text-sm font-medium text-gray-900 dark:text-gray-300`}
+            todo.completed
+              ? "line-through text-slate-400 dark:text-slate-400"
+              : "no-underline"
+          } "ms-2 text-base pb-1 text-slate-600 dark:text-slate-300`}
         >
           {todo.content}
         </label>
@@ -32,7 +34,7 @@ const TodoItem: FC<TodoItemProps> = ({ todo }) => {
 
       <button
         type="button"
-        className="text-white bg-red-400 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-red-400 dark:hover:bg-red-500 dark:focus:ring-red-800"
+        className="bg-grey-600 hover:bg-grey-400 p-2.5"
         onClick={() => deleteTodo(todo.id)}
       >
         <svg
@@ -40,7 +42,7 @@ const TodoItem: FC<TodoItemProps> = ({ todo }) => {
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          stroke="currentColor"
+          stroke="red"
         >
           <path
             strokeLinecap="round"

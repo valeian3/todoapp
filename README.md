@@ -14,14 +14,19 @@
 This project showcases a modern to-do app built with **React**, **Vite**, **TypeScript**, and **Tailwind CSS**. It highlights how to create a scalable and efficient application using these cutting-edge technologies. Ideal for learning and reference, this example demonstrates best practices in web development with a focus on performance and design.
 
 - create your daily todo tasks
-- edit tasks
+- ~~edit tasks~~
 - checkmark when completed
 - or simply delete when done
 
 ## Visuals of the app
 
-![Screenshot of a desktop design of todo application.](/src//assets//desktop-todoapp-empty.png "Empty list example")
-![Screenshot of a desktop design of todo application.](/src//assets//desktop-todoapp-full.png "With todos example")
+| ![Laptop dark theme](/src//assets//laptop-todoapp-dark.png) | ![Laptop light theme](/src//assets//laptop-todoapp-light.png) |
+| :---------------------------------------------------------: | :-----------------------------------------------------------: |
+|                      Laptop dark theme                      |                      Laptop light theme                       |
+
+| ![Mobile dark theme](/src//assets//mobile-todoapp-dark.png) | ![Mobile light theme](/src//assets//mobile-todoapp-light.png) |
+| :---------------------------------------------------------: | :-----------------------------------------------------------: |
+|                      Mobile dark theme                      |                      Mobile light theme                       |
 
 ## How to install / setup project
 
@@ -42,3 +47,7 @@ Instruction on how to follow up with pull request coming soon...
 ## Known issues (Work in progress)
 
 This project is still ongoing. Project is meant for training and finding best practices for constructing new project.
+
+## License
+
+GNU General Public License, version 3 or later.

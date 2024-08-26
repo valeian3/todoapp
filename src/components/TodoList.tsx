@@ -8,7 +8,7 @@ interface TodoListProps {
 export default function TodoList({ todos }: TodoListProps) {
   if (todos.length === 0)
     return (
-      <p className="m-0 text-gray-900 dark:text-white">
+      <p className="mx-2 text-slate-500 dark:text-slate-200">
         Start by adding new todo to your list
       </p>
     );

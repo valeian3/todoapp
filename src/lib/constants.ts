@@ -1,19 +1,63 @@
-import { Todo } from "./types";
-export const INITIAL_TODOS: Todo[] = [
-  {
-    id: 1,
-    content: "todo1",
-    completed: false,
-  },
-  {
-    id: 2,
-    content: "todo2",
-    completed: false,
-  },
-  {
-    id: 3,
-    content: "todo3",
-    completed: true,
-  },
+const SENSITIVE_WORDS_EN = [
+  "password",
+  "credit card",
+  "ssn",
+  "social security number",
+  "pin",
+  "security code",
+  "cvv",
+  "account number",
+  "bank account",
+  "credit-card",
+  "debit card",
+  "id number",
+  "passport",
+  "secret",
+  "encryption key",
+  "private key",
+  "security question",
+  "banking info",
+  "confidential",
+  "api key",
+  "token",
+  "authorization",
+  "auth",
+  "username",
+  "login",
+  "credentials",
+  "pass",
+  "pw",
 ];
-export const SENSITIVE_WORDS = ["password", "credit card"];
+
+const SENSITIVE_WORDS_HR = [
+  "lozinka",
+  "šifra",
+  "oib",
+  "broj kartice",
+  "sigurnosni kod",
+  "cvv",
+  "pin",
+  "broj računa",
+  "bankovni račun",
+  "identifikacijski broj",
+  "osobna iskaznica",
+  "tajna",
+  "enkripcijski ključ",
+  "privatni ključ",
+  "sigurnosno pitanje",
+  "bankovni podaci",
+  "povjerljivo",
+  "api ključ",
+  "token",
+  "autorizacija",
+  "korisničko ime",
+  "prijava",
+  "podaci za prijavu",
+  "pass",
+  "pw",
+];
+
+export const SENSITIVE_WORDS = [
+  ...new Set([...SENSITIVE_WORDS_EN, ...SENSITIVE_WORDS_HR]),
+];
+export const MAX_FREE_TODOS = 10;

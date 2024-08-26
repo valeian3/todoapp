@@ -11,7 +11,7 @@ const TodoItem: FC<TodoItemProps> = ({ todo }) => {
   const { deleteTodo, toggleTodoCompletion } = useTodoContext();
 
   return (
-    <div className="flex justify-between mb-4 rounded-2xl py-2 px-4 z-10 shadow-lg bg-slate-50 dark:bg-slate-600">
+    <div className="flex justify-between mb-4 rounded-2xl py-2 px-4 mx-2 shadow-md bg-slate-50 dark:bg-slate-600">
       <div className="flex justify-center items-center">
         <input
           id={todo.id.toString()}

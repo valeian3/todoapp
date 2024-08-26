@@ -1,20 +1,35 @@
 import { useState } from "react";
 import { useTodoContext } from "../lib/hooks";
 
+import { MAX_FREE_TODOS, SENSITIVE_WORDS } from "../lib/constants";
+
 export default function AddTodoForm() {
   const [todoContent, setTodoContent] = useState<string>("");
-  const { addTodo } = useTodoContext();
+  const { todos, addTodo } = useTodoContext();
 
   return (
     <form
+      autoComplete="off"
       onSubmit={(e) => {
         e.preventDefault();
+
+        if (SENSITIVE_WORDS.includes(todoContent.toLocaleLowerCase())) {
+          alert(
+            `Please do not use sensitive information such as ${todoContent}!`
+          );
+          return;
+        }
+
+        if (todos.length === MAX_FREE_TODOS) {
+          alert(`You need to sign in to add more then ${MAX_FREE_TODOS} todos`);
+          return;
+        }
 
         addTodo(todoContent);
         setTodoContent("");
       }}
     >
-      <div className="flex flex-row gap-2 mb-8 mt-4">
+      <div className="flex flex-row gap-2 mb-8 mt-4 mx-2">
         <div className="flex items-center border-b border-gray-500 py-1 w-full">
           <input
             aria-label="Add new task"

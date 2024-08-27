@@ -4,10 +4,10 @@ import { useTodoContext } from "../lib/hooks";
 import { MAX_FREE_TODOS, SENSITIVE_WORDS } from "../lib/constants";
 
 const DeprecationNotice = () => (
-  <div className="bg-yellow-200 p-4 border border-yellow-500">
+  <div className="bg-yellow-200 p-4 border border-yellow-500 rounded">
     <p className="text-yellow-800">
       Warning: The `AddTodoForm` component is deprecated and will be removed in
-      a future release. Please use the new `Modal` with form instead.
+      a future release. Please use the new `Modal` with form component instead.
     </p>
   </div>
 );

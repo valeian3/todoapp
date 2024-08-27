@@ -44,6 +44,16 @@ Coming soon...
 
 Instruction on how to follow up with pull request coming soon...
 
+## Deprecated Components
+
+### `AddTodoForm`
+
+**Status**: Deprecated
+
+**Description**: The `AddTodoForm` component is deprecated and will be removed in a future release. Please use the new `Modal` with from instead.
+
+**Replacement**: `Modal`
+
 ## Known issues (Work in progress)
 
 This project is still ongoing. Project is meant for training and finding best practices for constructing new project.

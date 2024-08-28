@@ -31,7 +31,7 @@ function Modal({ title, actions, open, onClose, children }: ModalProps) {
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className={`w-full h-auto bg-white rounded-xl shadow transition-all duration-200 dark:bg-gray-700 ${
+        className={`w-full h-auto bg-white rounded-t-xl shadow transition-all duration-200 dark:bg-gray-700 ${
           open
             ? "translate-y-0 scale-100 opacity-100"
             : "translate-y-full scale-90 opacity-0"

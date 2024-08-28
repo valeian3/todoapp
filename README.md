@@ -14,7 +14,7 @@
 This project showcases a modern to-do app built with **React**, **Vite**, **TypeScript**, and **Tailwind CSS**. It highlights how to create a scalable and efficient application using these cutting-edge technologies. Ideal for learning and reference, this example demonstrates best practices in web development with a focus on performance and design.
 
 - create your daily todo tasks
-- ~~edit tasks~~
+- edit tasks
 - checkmark when completed
 - or simply delete when done
 

@@ -8,7 +8,7 @@ function App() {
   const { todos } = useTodoContext();
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-100 dark:bg-slate-700 tablet:items-center transition-colors duration-100">
+    <div className="h-dvh flex flex-col bg-slate-100 dark:bg-slate-700 tablet:items-center transition-colors duration-100">
       <Header />
       <div className="flex flex-col flex-grow px-4 py-4 overflow-hidden tablet:px-8 tablet:w-3/5 laptop:w-2/5 desktop:w-96">
         <main className="flex-grow overflow-hidden relative">

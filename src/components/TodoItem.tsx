@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { useTodoContext } from "../lib/hooks";
 
 import { Todo } from "../lib/types";
@@ -8,28 +8,65 @@ type TodoItemProps = {
 };
 
 const TodoItem: FC<TodoItemProps> = ({ todo }) => {
-  const { deleteTodo, toggleTodoCompletion } = useTodoContext();
+  const { deleteTodo, toggleTodoCompletion, editTodo } = useTodoContext();
+  const [isEditing, setIsEditing] = useState<boolean>(false);
+  const [editedContent, setEditedContent] = useState<string>(todo.content);
+
+  const handleEdit = () => {
+    setIsEditing(true);
+  };
+
+  const handleSave = () => {
+    if (editedContent.trim()) {
+      editTodo(todo.id, editedContent.trim());
+    }
+    setIsEditing(false);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleSave();
+    } else if (e.key === "Escape") {
+      setIsEditing(false);
+      setEditedContent(todo.content);
+    }
+  };
 
   return (
-    <div className="flex justify-between mb-4 rounded-2xl py-2 px-4 mx-2 shadow-md bg-slate-50 dark:bg-slate-600 transition-colors duration-100">
+    <div className="flex justify-between mb-4 rounded-2xl py-2 px-4 shadow-md bg-slate-50 dark:bg-slate-600 transition-colors duration-100">
       <div className="flex justify-center items-center">
         <input
           id={todo.id.toString()}
           type="checkbox"
           checked={todo.completed}
           onChange={() => toggleTodoCompletion(todo.id)}
-          className="w-4 h-4 cursor-pointer text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-transparent dark:focus:ring-transparent dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+          className={`w-4 h-4 cursor-pointer text-green-600 bg-gray-100 border-gray-300 rounded-full focus:ring-transparent dark:focus:ring-transparent dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 
+    appearance-none checked:bg-green-600 checked:border-transparent 
+       `}
         />
-        <label
-          htmlFor={todo.id.toString()}
-          className={`ml-4 ${
-            todo.completed
-              ? "line-through text-slate-400 dark:text-slate-400"
-              : "no-underline"
-          } "ms-2 text-base pb-1 text-slate-600 dark:text-slate-300`}
-        >
-          {todo.content}
-        </label>
+
+        {isEditing ? (
+          <input
+            type="text"
+            value={editedContent}
+            onChange={(e) => setEditedContent(e.target.value)}
+            onBlur={handleSave}
+            onKeyDown={handleKeyDown}
+            className="ml-4 mb-1 bg-transparent outline-none dark:text-slate-300"
+            autoFocus
+          />
+        ) : (
+          <label
+            className={`ml-4 ${
+              todo.completed
+                ? "line-through text-slate-400 dark:text-slate-400"
+                : "no-underline text-slate-600 dark:text-slate-300 cursor-pointer"
+            } text-base pb-1`}
+            onClick={todo.completed ? undefined : handleEdit}
+          >
+            {todo.content}
+          </label>
+        )}
       </div>
 
       <button

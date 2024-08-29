@@ -62,7 +62,7 @@ export default function Footer() {
           </svg>
           <p className="mb-[3px]">New Task</p>
         </button>
-        {/* TODO: feature will be later added */}
+        {/* TODO: feature, implement lists */}
         {/* <button
           type="button"
           className="text-blue-700 dark:text-blue-500 font-medium rounded-lg text-base px-5 py-2.5 text-center inline-flex items-center"
@@ -84,6 +84,7 @@ export default function Footer() {
             action: cancelSubmission,
           },
         }}
+        position="bottom"
         open={modalOpen}
         onClose={() => setModalOpen(false)}
       >
@@ -91,7 +92,7 @@ export default function Footer() {
           <form
             id="newTaskForm"
             autoComplete="off"
-            className="space-y-4 flex justify-center"
+            className="space-y-4 flex justify-center items-center flex-col"
             onSubmit={handleSubmit}
           >
             <input

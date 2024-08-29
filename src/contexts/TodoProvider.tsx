@@ -1,4 +1,4 @@
-import { createContext, PropsWithChildren, useMemo } from "react";
+import { createContext, PropsWithChildren, useMemo, useState } from "react";
 
 import { useLocalStorage } from "../lib/hooks";
 import { getMaxIdFromList } from "../lib/utils";
@@ -12,12 +12,15 @@ type TodoContext = {
   editTodo: (id: number, newContent: string) => void;
   deleteTodo: (id: number) => void;
   countCompletedTodos: number;
+  query: string;
+  setQuery: React.Dispatch<React.SetStateAction<string>>;
 };
 
 export const TodoContext = createContext<TodoContext | undefined>(undefined);
 
 const TodoProvider = ({ children }: PropsWithChildren) => {
   const [todos, setTodos] = useLocalStorage<Todo[]>("todos", []);
+  const [query, setQuery] = useState<string>("");
 
   const addTodo = (content: string) => {
     setTodos((prev) => {
@@ -68,6 +71,8 @@ const TodoProvider = ({ children }: PropsWithChildren) => {
         toggleTodoCompletion,
         editTodo,
         deleteTodo,
+        query,
+        setQuery,
       }}
     >
       {children}

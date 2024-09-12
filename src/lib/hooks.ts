@@ -1,10 +1,19 @@
 import { useContext, useState, useRef, useEffect } from "react";
 import { TodoContext } from "../contexts/TodoProvider";
+import { ModalContext } from "../contexts/ModalProvider";
 
 export const useTodoContext = () => {
   const context = useContext(TodoContext);
   if (!context) {
     throw new Error("useTodoContext must be used within a TodoProvider");
+  }
+  return context;
+};
+
+export const useModalContext = () => {
+  const context = useContext(ModalContext);
+  if (!context) {
+    throw new Error("useModalContext must be used within a ModalProvider");
   }
   return context;
 };

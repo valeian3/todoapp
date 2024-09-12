@@ -1,10 +1,7 @@
-import cssnano from 'cssnano';
-
-export default {
+module.exports = {
   plugins: {
     tailwindcss: {},
     autoprefixer: {},
-    ...(process.env.NODE_ENV === 'production' ? [cssnano({ preset: 'default' })]
-      : [])
+    ...(process.env.NODE_ENV === 'production' ? { cssnano: { preset: 'default' } } : {}),
   },
-}
+};

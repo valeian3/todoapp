@@ -1,6 +1,6 @@
 import React from "react";
 
-type ModalProps = {
+interface ModalProps {
   title: string;
   actions: {
     confirm: {
@@ -10,14 +10,14 @@ type ModalProps = {
     };
     cancel: {
       text: string;
-      action: () => void;
+      action?: () => void | null;
     };
   };
   position?: "top" | "center" | "bottom";
   open: boolean;
   onClose: () => void;
   children: React.ReactNode;
-};
+}
 
 // TODO: adjust padding on actions and children on centered modal, make it dynamic based on position
 function Modal({
@@ -83,7 +83,7 @@ function Modal({
           <button
             type="submit"
             form={actions.confirm.form}
-            onClick={actions.confirm.form ? () => {} : actions.confirm.action}
+            onClick={actions.confirm.form ? undefined : actions.confirm.action}
             className="text-blue-700 dark:text-blue-500 font-medium rounded-lg text-base  text-center inline-flex items-center"
           >
             {actions.confirm.text}

@@ -1,5 +1,6 @@
 import React, { useCallback } from "react";
-import { useDebounce, useTodoContext } from "../lib/hooks";
+
+import { useDebounce, useTodoContext } from "lib/hooks";
 
 function Search() {
   const { query, setQuery } = useTodoContext();

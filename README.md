@@ -24,10 +24,6 @@ This project showcases a modern to-do app built with **React**, **Vite**, **Type
 | :---------------------------------------------------------: | :-----------------------------------------------------------: |
 |                      Laptop dark theme                      |                      Laptop light theme                       |
 
-| ![Mobile dark theme](/src//assets//mobile-todoapp-dark.png) | ![Mobile light theme](/src//assets//mobile-todoapp-light.png) |
-| :---------------------------------------------------------: | :-----------------------------------------------------------: |
-|                      Mobile dark theme                      |                      Mobile light theme                       |
-
 ## How to install / setup project
 
 1. clone this project
@@ -44,20 +40,6 @@ Coming soon...
 
 Instruction on how to follow up with pull request coming soon...
 
-## Deprecated Components
-
-### `AddTodoForm`
-
-**Status**: Deprecated
-
-**Description**: The `AddTodoForm` component is deprecated and will be removed in a future release. Please use the new `Modal` with from instead.
-
-**Replacement**: `Modal`
-
 ## Known issues (Work in progress)
 
 This project is still ongoing. Project is meant for training and finding best practices for constructing new project.
-
-## License
-
-GNU General Public License, version 3 or later.

@@ -1,8 +1,10 @@
-import { useModalContext, useTodoContext } from "../lib/hooks";
-import { Todo } from "../lib/types";
-import TodoItem from "./TodoItem";
+import { useModalContext, useTodoContext } from "lib/hooks";
 
-import emptyListIcon from "../assets/empty-checklist-icon.png";
+import TodoItem from "components/TodoItem";
+
+import { Todo } from "lib/types";
+
+import emptyListIcon from "assets/empty-checklist-icon.png";
 
 interface TodoListProps {
   todos: Todo[];

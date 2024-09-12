@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-import Modal from "../ui-components/Modal";
+import Modal from "ui-components/Modal";
 
-import { useModalContext, useTodoContext } from "../lib/hooks";
+import { useModalContext, useTodoContext } from "lib/hooks";
 
-import { SENSITIVE_WORDS } from "../lib/constants";
+import { SENSITIVE_WORDS } from "lib/constants";
 
 export default function Footer() {
   const { todos, addTodo } = useTodoContext();
@@ -113,6 +113,7 @@ export default function Footer() {
               onChange={(e) => {
                 setTodoContent(e.target.value);
               }}
+              aria-hidden
             />
           </form>
         </div>
@@ -128,7 +129,6 @@ export default function Footer() {
           },
           cancel: {
             text: "",
-            action: () => {},
           },
         }}
         open={modalAlertOpen}

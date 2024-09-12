@@ -1,11 +1,11 @@
 import { createContext, PropsWithChildren, useMemo, useState } from "react";
 
-import { useLocalStorage } from "../lib/hooks";
-import { getMaxIdFromList } from "../lib/utils";
+import { useLocalStorage } from "lib/hooks";
+import { getMaxIdFromList } from "lib/utils";
 
-import type { Todo } from "../lib/types";
+import type { Todo } from "lib/types";
 
-type TodoContext = {
+interface TodoContext {
   todos: Todo[];
   addTodo: (content: string) => void;
   toggleTodoCompletion: (id: number) => void;
@@ -14,7 +14,7 @@ type TodoContext = {
   countCompletedTodos: number;
   query: string;
   setQuery: React.Dispatch<React.SetStateAction<string>>;
-};
+}
 
 export const TodoContext = createContext<TodoContext | undefined>(undefined);
 

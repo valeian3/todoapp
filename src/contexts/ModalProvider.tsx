@@ -1,9 +1,9 @@
 import { createContext, PropsWithChildren, useState } from "react";
 
-type ModalContext = {
+interface ModalContext {
   modalOpen: boolean;
   setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
-};
+}
 
 export const ModalContext = createContext<ModalContext | undefined>(undefined);
 

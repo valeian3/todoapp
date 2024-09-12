@@ -1,4 +1,4 @@
-import ThemeButton from "./ThemeButton";
+import ThemeButton from "components/ThemeButton";
 
 export default function Header() {
   return (

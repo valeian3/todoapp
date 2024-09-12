@@ -1,9 +1,9 @@
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Search from "./components/Search";
-import TodoList from "./components/TodoList";
+import Footer from "components/Footer";
+import Header from "components/Header";
+import Search from "components/Search";
+import TodoList from "components/TodoList";
 
-import { useTodoContext } from "./lib/hooks";
+import { useTodoContext } from "lib/hooks";
 
 function App() {
   const { todos } = useTodoContext();

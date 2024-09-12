@@ -1,11 +1,11 @@
 import { FC, useState } from "react";
-import { useTodoContext } from "../lib/hooks";
+import { useTodoContext } from "lib/hooks";
 
-import { Todo } from "../lib/types";
+import { Todo } from "lib/types";
 
-type TodoItemProps = {
+interface TodoItemProps {
   todo: Todo;
-};
+}
 
 type InputEdit = "" | "content";
 

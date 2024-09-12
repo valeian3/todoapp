@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useLocalStorage } from "../lib/hooks";
+import { useLocalStorage } from "lib/hooks";
 
 function ThemeButton() {
   const [theme, setTheme] = useLocalStorage<string>("theme", "light");

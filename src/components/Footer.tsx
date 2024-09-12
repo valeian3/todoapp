@@ -2,13 +2,13 @@ import { useState } from "react";
 
 import Modal from "../ui-components/Modal";
 
-import { useTodoContext } from "../lib/hooks";
+import { useModalContext, useTodoContext } from "../lib/hooks";
 
 import { SENSITIVE_WORDS } from "../lib/constants";
 
 export default function Footer() {
-  const { addTodo } = useTodoContext();
-  const [modalOpen, setModalOpen] = useState<boolean>(false);
+  const { todos, addTodo } = useTodoContext();
+  const { modalOpen, setModalOpen } = useModalContext();
   const [modalAlertOpen, setModalAlertOpen] = useState<boolean>(false);
   const [todoContent, setTodoContent] = useState<string>("");
 
@@ -45,23 +45,28 @@ export default function Footer() {
   return (
     <>
       <div className="flex justify-between mt-4">
-        <button
-          type="button"
-          data-modal-target="authentication-modal"
-          data-modal-toggle="authentication-modal"
-          onClick={() => setModalOpen(true)}
-          className="text-blue-700 dark:text-blue-500 font-medium rounded-lg text-base px-5 py-2.5 text-center inline-flex items-center"
-        >
-          <svg
-            className="w-5 h-5 me-2"
-            fill="currentColor"
-            viewBox="0 0 1024 1024"
+        {!todos.length ? (
+          ""
+        ) : (
+          <button
+            type="button"
+            data-modal-target="authentication-modal"
+            data-modal-toggle="authentication-modal"
+            onClick={() => setModalOpen(true)}
+            className="text-blue-700 dark:text-blue-500 font-medium rounded-lg text-base px-5 py-2.5 text-center inline-flex items-center"
           >
-            <path d="M696 480H544V328c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v152H328c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h152v152c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V544h152c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8z" />
-            <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z" />
-          </svg>
-          <p className="mb-[3px]">New Task</p>
-        </button>
+            <svg
+              className="w-5 h-5 me-2"
+              fill="currentColor"
+              viewBox="0 0 1024 1024"
+            >
+              <path d="M696 480H544V328c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v152H328c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h152v152c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V544h152c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8z" />
+              <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z" />
+            </svg>
+            <p className="mb-[3px]">New Task</p>
+          </button>
+        )}
+
         {/* TODO: feature, implement lists */}
         {/* <button
           type="button"
@@ -71,6 +76,7 @@ export default function Footer() {
         </button> */}
       </div>
 
+      {/* New task modal*/}
       <Modal
         title="New Task"
         actions={{
@@ -111,6 +117,8 @@ export default function Footer() {
           </form>
         </div>
       </Modal>
+
+      {/* Alert, sensitive word modal*/}
       <Modal
         title="Alert"
         actions={{

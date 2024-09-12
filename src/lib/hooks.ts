@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useRef, useEffect } from "react";
 import { TodoContext } from "../contexts/TodoProvider";
 
 export const useTodoContext = () => {
@@ -35,4 +35,31 @@ export const useLocalStorage = <T>(key: string, initialValue: T) => {
   };
 
   return [storedValue, setValue] as const;
+};
+
+export const useDebounce = <T extends (...args: never[]) => void>(
+  callback: T,
+  delay: number
+) => {
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
+
+  const debouncedCallback = (...args: Parameters<T>) => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
+    timeoutRef.current = setTimeout(() => {
+      callback(...args);
+    }, delay);
+  };
+
+  return debouncedCallback;
 };

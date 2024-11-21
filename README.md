@@ -9,6 +9,8 @@
 
 </center>
 
+Here is a live [demo](https://www.todoapp.valerianbahnik.from.hr).
+
 ## A fully functional EXAMPLE project written with React, Vite, TypeScript and Tailwind
 
 This project showcases a modern to-do app built with **React**, **Vite**, **TypeScript**, and **Tailwind CSS**. It highlights how to create a scalable and efficient application using these cutting-edge technologies. Ideal for learning and reference, this example demonstrates best practices in web development with a focus on performance and design.

@@ -63,7 +63,7 @@ const TodoProvider = ({ children }: PropsWithChildren) => {
   );
 
   return (
-    <TodoContext.Provider
+    <TodoContext
       value={{
         todos,
         addTodo,
@@ -76,7 +76,7 @@ const TodoProvider = ({ children }: PropsWithChildren) => {
       }}
     >
       {children}
-    </TodoContext.Provider>
+    </TodoContext>
   );
 };
 

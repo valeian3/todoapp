@@ -11,14 +11,14 @@ const ModalProvider = ({ children }: PropsWithChildren) => {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
 
   return (
-    <ModalContext.Provider
+    <ModalContext
       value={{
         modalOpen,
         setModalOpen,
       }}
     >
       {children}
-    </ModalContext.Provider>
+    </ModalContext>
   );
 };
 
